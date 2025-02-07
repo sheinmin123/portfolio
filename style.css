@@ -366,43 +366,53 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   gap: 10px;
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
+}
 
-
-  .project-card {
-    background-color: #222;
-    border: 1px solid #f33c3c;
-    border-radius: 10px;
-    padding: 15px;
-    display: flex;
-    gap: 10px;
-    width: 700px;
-    height: 130px;
+.project-card {
+  background-color: #222;
+  border: 1px solid #f33c3c;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  align-items: center;
 }
 
 .project-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   height: auto;
   border-radius: 10px;
 }
 
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
 .project-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #f33;
 }
 
 .project-description {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #ccc;
 }
 
-/* Responsive for Mobile and Tablet */
-@media (max-width: 600px) {
+/* Responsive for Mobile (iPhone 16 Pro and similar sizes) */
+@media (max-width: 480px) {
   .projects-container {
     padding: 10px;
   }
@@ -412,38 +422,42 @@ section {
     align-items: center;
     text-align: center;
     padding: 15px;
-    width: 100%;  /* Ensure the card takes full width */
-    height: auto;  /* Adjust height for smaller screens */
+    width: 100%;
   }
 
   .project-image {
-    width: 80%;
-    max-width: 200px;  /* Adjust image size for mobile */
+    width: 100%;
+    max-width: 180px;
     height: auto;
-    margin-bottom: 10px;  /* Add space between image and text */
-  }
-
-  .project-title {
-    font-size: 1.6rem;  /* Reduce font size for mobile */
     margin-bottom: 10px;
   }
 
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
   .project-description {
-    font-size: 1.4rem;  /* Smaller description text */
+    font-size: 1.2rem;
   }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Responsive for Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
   .project-card {
-    max-width: 90%;  /* Make cards slightly smaller for tablet size */
+    flex-direction: row;
+    max-width: 95%;
+  }
+
+  .project-image {
+    max-width: 220px;
   }
 
   .project-title {
-    font-size: 1.8rem;  /* Slightly smaller font size for tablet */
+    font-size: 1.6rem;
   }
 
   .project-description {
-    font-size: 1.5rem;  /* Adjust text size for better readability */
+    font-size: 1.3rem;
   }
-}
 }
