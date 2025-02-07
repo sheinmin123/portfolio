@@ -93,11 +93,14 @@ nav a.active, nav a:hover {
         text-align: center;
     }
 
-    nav {
-        flex-direction: row;
-        gap: 10px;
-        margin-top: 10px;
-    }
+    @media (max-width: 480px) {
+      nav {
+          flex-direction: row;
+          gap: 8px;
+          text-align: center;
+      }
+  }
+
 }
 
 /* SECTIONS */
@@ -125,7 +128,7 @@ section {
 }
 
 .home-content h1 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 700;
 }
 
@@ -300,9 +303,11 @@ section {
   background-color: #222;
   border: 1px solid #f33c3c;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 /* Image */
@@ -321,22 +326,52 @@ section {
 
 .education-details h2 {
   color: #f00;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
 }
 
 .education-details p {
   color: #f88;
   margin: 5px 0;
+  font-size: 1rem;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 600px) { 
+/* Responsive for iPhone SE and Small Screens */
+@media (max-width: 375px) { 
   .education-card {
     flex-direction: column; 
     align-items: center;
     text-align: center;
     padding: 15px;
+    max-width: 95%;
+  }
+
+  .education-image img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .education-card .text-content {
+    padding-left: 0;
+  }
+
+  .education-details h2 {
+    font-size: 1.4rem; 
+  }
+
+  .education-details p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive for iPhone 12 Pro (Medium Screens) */
+@media (min-width: 376px) and (max-width: 430px) { 
+  .education-card {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    max-width: 90%;
   }
 
   .education-image img {
@@ -349,30 +384,45 @@ section {
   }
 
   .education-details h2 {
-    font-size: 1.5rem; 
+    font-size: 1.6rem; 
+  }
+
+  .education-details p {
+    font-size: 1rem;
   }
 }
 
+/* Responsive for Tablets */
 @media (min-width: 601px) and (max-width: 1024px) { 
   .education-card {
-    max-width: 90%; 
+    max-width: 85%; 
+  }
+
+  .education-image img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .education-details h2 {
+    font-size: 1.7rem;
   }
 }
 
 
-/* PROJECTS */
+
 .projects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Centers content in the body */
   min-height: 100vh;
-  gap: 10px;
-  padding: 20px;
+  gap: 20px; /* Increased gap for better spacing */
+  padding: 100px 20px 20px; /* Top padding to create space below navbar */
   width: 100%;
   box-sizing: border-box;
 }
 
+/* Ensure project cards fit properly */
 .project-card {
   background-color: #222;
   border: 1px solid #f33c3c;
@@ -381,10 +431,15 @@ section {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  width: 90%;
-  max-width: 700px;
-  height: auto;
+  width: 750px;
+  max-width: 95%; /* Ensures it doesn't overflow */
+  height: 150px;
   align-items: center;
+}
+
+/* Ensure the first project is visible */
+.project-card:first-child {
+  margin-top: 0; /* Removed extra margin since we now use padding on container */
 }
 
 .project-image {
@@ -411,39 +466,43 @@ section {
   color: #ccc;
 }
 
-/* Responsive for Mobile (iPhone 16 Pro and similar sizes) */
+/* Responsive for Mobile */
 @media (max-width: 480px) {
   .projects-container {
-    padding: 10px;
+    padding: 100px 10px 20px; 
   }
 
   .project-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     width: 100%;
   }
 
   .project-image {
     width: 100%;
-    max-width: 180px;
+    max-width: 100px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
   }
 
   .project-title {
     font-size: 1.5rem;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .project-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 /* Responsive for Tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
+  .projects-container {
+    padding: 110px 20px 20px;
+  }
+
   .project-card {
     flex-direction: row;
     max-width: 95%;
@@ -461,3 +520,5 @@ section {
     font-size: 1.3rem;
   }
 }
+
+
