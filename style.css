@@ -287,15 +287,15 @@ section {
 }
 
 
-/* EDUCATION */
+/* EDUCATION SECTION */
 .education-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh; 
-  gap: 10px;
-  padding: 20px;
+  gap: 20px;
+  padding: 120px 20px 100px; /* Prevents navbar and footer overlap */
   width: 100%;
   box-sizing: border-box;
 }
@@ -307,10 +307,12 @@ section {
   background-color: #222;
   border: 1px solid #f33c3c;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   display: flex;
-  gap: 10px;
+  flex-direction: column; /* Stack on small screens */
+  gap: 15px;
   align-items: center;
+  text-align: center;
   box-sizing: border-box;
 }
 
@@ -324,14 +326,13 @@ section {
 
 /* Text */
 .education-card .text-content {
-  flex: 1;
-  padding-left: 15px;
+  width: 100%;
 }
 
 .education-details h2 {
   color: #f00;
   font-size: 1.8rem;
-  margin: 0;
+  margin: 5px 0;
 }
 
 .education-details p {
@@ -340,22 +341,23 @@ section {
   font-size: 1rem;
 }
 
+/* Fix Footer Overlap */
+.education-container::after {
+  content: "";
+  display: block;
+  height: 80px; /* Extra space after last card */
+}
+
+/* ✅ Small Screens (iPhone SE & iPhone 16 Pro) */
 @media (max-width: 375px) { 
   .education-card {
-    flex-direction: column; 
-    align-items: center;
-    text-align: center;
-    padding: 15px;
+    padding: 10px;
     max-width: 95%;
   }
 
   .education-image img {
     width: 70px;
     height: 70px;
-  }
-
-  .education-card .text-content {
-    padding-left: 0;
   }
 
   .education-details h2 {
@@ -367,22 +369,15 @@ section {
   }
 }
 
-@media (min-width: 376px) and (max-width: 430px) { 
+/* ✅ Medium Screens (430px - Small Tablets) */
+@media (min-width: 376px) and (max-width: 600px) { 
   .education-card {
-    flex-direction: column; 
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    max-width: 90%;
+    max-width: 80%;
   }
 
   .education-image img {
     width: 80px;
     height: 80px;
-  }
-
-  .education-card .text-content {
-    padding-left: 0;
   }
 
   .education-details h2 {
@@ -394,10 +389,10 @@ section {
   }
 }
 
-
+/* ✅ Large Tablets & Small Laptops */
 @media (min-width: 601px) and (max-width: 1024px) { 
   .education-card {
-    max-width: 85%; 
+    max-width: 85%;
   }
 
   .education-image img {
@@ -411,7 +406,7 @@ section {
 }
 
 
-/** Experiences **/
+
 /** Experiences **/
 .projects-container {
   display: flex;
@@ -471,18 +466,18 @@ section {
   line-height: 1.5;
 }
 
-/* 📱 Small Phones (iPhone SE, older models) */
+
 @media (max-width: 400px) {  
   .project-card {
-    flex-direction: row; /* Keep row layout on small screens */
+    flex-direction: row; 
     align-items: center;
-    text-align: left; /* Ensure text aligns properly */
+    text-align: left; 
     width: 100%;
-    max-width: 350px; /* Ensure proper width */
+    max-width: 350px; 
   }
 
   .project-image {
-    max-width: 100px; /* Adjust image size */
+    max-width: 100px; 
     height: auto;
   }
 
@@ -496,7 +491,6 @@ section {
 }
 
 
-/* 📱 Mobile (iPhone 12 Pro, standard phones) */
 @media (min-width: 401px) and (max-width: 768px) {
   .projects-container {
     padding: 80px 15px 20px;
@@ -527,7 +521,7 @@ section {
   }
 }
 
-/* 📟 Tablets (iPad, medium devices) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .projects-container {
     padding: 100px 20px 20px;
