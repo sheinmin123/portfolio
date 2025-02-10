@@ -341,7 +341,7 @@ section {
   font-size: 1rem;
 }
 
-/* ---------- iPhone SE (1st & 2nd Gen) 375px ---------- */
+
 @media (max-width: 375px) { 
   .education-container {
     padding-top: 80px;
@@ -372,7 +372,7 @@ section {
   }
 }
 
-/* ---------- Small Phones (376px - 430px) ---------- */
+
 @media (min-width: 376px) and (max-width: 430px) { 
   .education-container {
     padding-top: 80px;
@@ -404,7 +404,7 @@ section {
   }
 }
 
-/* ---------- Tablets (601px - 1024px) ---------- */
+
 @media (min-width: 601px) and (max-width: 1024px) { 
   .education-container {
     padding-top: 80px;
@@ -429,12 +429,11 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centers content in the body */
+  justify-content: center; 
   justify-content: center; 
   min-height: 100vh;
-  gap: 20px; /* Increased gap for better spacing */
-  padding: 100px 20px 20px; /* Top padding to create space below navbar */
-
+  gap: 20px; 
+  padding: 100px 20px 20px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -458,9 +457,9 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-/* Ensure the first project is visible */
+
 .project-card:first-child {
-  margin-top: 0; /* Removed extra margin since we now use padding on container */
+  margin-top: 0; 
 }
 
 /* Image */
@@ -491,17 +490,16 @@ section {
   line-height: 1.5;
 }
 
-/* Responsive for Small Phones (iPhone SE, older models) */
+
 @media (max-width: 400px) {
   .project-card {
-    flex-direction: row; /* Keep row layout on small screens */
+    flex-direction: row; 
     align-items: center;
-    text-align: left; /* Ensure text aligns properly */
-    max-width: 350px; /* Ensure proper width */
+    text-align: left; 
+    max-width: 350px; 
   }
   .project-image {
     max-width: 100px; /* Adjust image size */
-    height: auto;
   }
   .project-title {
     font-size: 1.2rem;
@@ -511,16 +509,16 @@ section {
   }
 }
 
-/* Responsive for Mobile (iPhone 12 Pro, standard phones) */
+
 @media (min-width: 401px) and (max-width: 768px) {
   .project-card {
-    flex-direction: row; /* Keep row layout on small screens */
+    flex-direction: row;
     align-items: center;
-    text-align: left; /* Ensure text aligns properly */
-    max-width: 350px; /* Ensure proper width */
+    text-align: left; 
+    max-width: 350px; 
   }
   .project-image {
-    max-width: 100px; /* Adjust image size */
+    max-width: 100px; 
     height: auto;
   }
   .project-title {
