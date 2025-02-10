@@ -99,6 +99,10 @@ nav a.active, nav a:hover {
           gap: 8px;
           text-align: center;
       }
+      nav a {
+        font-size: 16px;
+        padding: 10px;
+    }
   }
 
 }
@@ -336,7 +340,6 @@ section {
   font-size: 1rem;
 }
 
-/* Responsive for iPhone SE and Small Screens */
 @media (max-width: 375px) { 
   .education-card {
     flex-direction: column; 
@@ -364,7 +367,6 @@ section {
   }
 }
 
-/* Responsive for iPhone 12 Pro (Medium Screens) */
 @media (min-width: 376px) and (max-width: 430px) { 
   .education-card {
     flex-direction: column; 
@@ -392,7 +394,7 @@ section {
   }
 }
 
-/* Responsive for Tablets */
+
 @media (min-width: 601px) and (max-width: 1024px) { 
   .education-card {
     max-width: 85%; 
@@ -409,20 +411,23 @@ section {
 }
 
 
-
+/** Experiences **/
+/** Experiences **/
 .projects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centers content in the body */
+  justify-content: center; 
   min-height: 100vh;
-  gap: 20px; /* Increased gap for better spacing */
-  padding: 100px 20px 20px; /* Top padding to create space below navbar */
+  gap: 20px; 
+  padding: 80px 15px 20px; 
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Ensure project cards fit properly */
+/* Project Card */
 .project-card {
   background-color: #222;
   border: 1px solid #f33c3c;
@@ -430,25 +435,22 @@ section {
   padding: 15px;
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  width: 750px;
-  max-width: 95%; /* Ensures it doesn't overflow */
-  height: 150px;
+  gap: 15px;
+  width: 100%;
+  max-width: 750px;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Ensure the first project is visible */
-.project-card:first-child {
-  margin-top: 0; /* Removed extra margin since we now use padding on container */
-}
-
+/* Image */
 .project-image {
   width: 100%;
-  max-width: 250px;
+  max-width: 220px;
   height: auto;
   border-radius: 10px;
 }
 
+/* Content */
 .project-content {
   display: flex;
   flex-direction: column;
@@ -456,40 +458,68 @@ section {
   flex: 1;
 }
 
+
 .project-title {
   font-size: 1.8rem;
   color: #f33;
+  margin-bottom: 6px;
 }
 
 .project-description {
   font-size: 1.4rem;
   color: #ccc;
+  line-height: 1.5;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 480px) {
+/* 📱 Small Phones (iPhone SE, older models) */
+@media (max-width: 400px) {  
+  .project-card {
+    flex-direction: row; /* Keep row layout on small screens */
+    align-items: center;
+    text-align: left; /* Ensure text aligns properly */
+    width: 100%;
+    max-width: 350px; /* Ensure proper width */
+  }
+
+  .project-image {
+    max-width: 100px; /* Adjust image size */
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* 📱 Mobile (iPhone 12 Pro, standard phones) */
+@media (min-width: 401px) and (max-width: 768px) {
   .projects-container {
-    padding: 100px 10px 20px; 
+    padding: 80px 15px 20px;
   }
 
   .project-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
+    max-width: 350px;
   }
 
   .project-image {
     width: 100%;
-    max-width: 100px;
+    max-width: 180px;
     height: auto;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
   }
 
   .project-title {
-    font-size: 1.5rem;
-    margin-bottom: 6px;
+    font-size: 1.4rem;
   }
 
   .project-description {
@@ -497,19 +527,20 @@ section {
   }
 }
 
-/* Responsive for Tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
+/* 📟 Tablets (iPad, medium devices) */
+@media (min-width: 769px) and (max-width: 1024px) {
   .projects-container {
-    padding: 110px 20px 20px;
+    padding: 100px 20px 20px;
   }
 
   .project-card {
     flex-direction: row;
-    max-width: 95%;
+    width: 95%;
+    max-width: 650px;
   }
 
   .project-image {
-    max-width: 220px;
+    max-width: 200px;
   }
 
   .project-title {
@@ -517,8 +548,10 @@ section {
   }
 
   .project-description {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
+
+
 
 
