@@ -104,18 +104,9 @@ nav a.active, nav a:hover {
         padding: 10px;
     }
   }
-  @media (max-width: 375px) {
-    nav {
-        flex-direction: row;
-        gap: 8px;
-        text-align: center;
-    }
-    nav a {
-      font-size: 8px;
-      padding: 5px;
-  }
+
 }
-}
+
 
 /* SECTIONS */
 section {
@@ -350,17 +341,21 @@ section {
   font-size: 1rem;
 }
 
+/* ---------- iPhone SE (1st & 2nd Gen) 375px ---------- */
 @media (max-width: 375px) { 
+  .education-container {
+    padding-top: 80px;
+  }
+
   .education-card {
     flex-direction: column; 
     align-items: center;
     text-align: center;
-    padding: 15px;
-    max-width: 95%;
+    max-width: 90%;
   }
 
   .education-image img {
-    width: 70px;
+    width: 80px;
     height: 70px;
   }
 
@@ -377,7 +372,12 @@ section {
   }
 }
 
+/* ---------- Small Phones (376px - 430px) ---------- */
 @media (min-width: 376px) and (max-width: 430px) { 
+  .education-container {
+    padding-top: 80px;
+  }
+
   .education-card {
     flex-direction: column; 
     align-items: center;
@@ -404,8 +404,12 @@ section {
   }
 }
 
-
+/* ---------- Tablets (601px - 1024px) ---------- */
 @media (min-width: 601px) and (max-width: 1024px) { 
+  .education-container {
+    padding-top: 80px;
+  }
+
   .education-card {
     max-width: 85%; 
   }
@@ -419,8 +423,6 @@ section {
     font-size: 1.7rem;
   }
 }
-
-
 
 /** Experiences **/
 .projects-container {
