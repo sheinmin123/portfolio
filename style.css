@@ -104,7 +104,17 @@ nav a.active, nav a:hover {
         padding: 10px;
     }
   }
-
+  @media (max-width: 375px) {
+    nav {
+        flex-direction: row;
+        gap: 8px;
+        text-align: center;
+    }
+    nav a {
+      font-size: 8px;
+      padding: 5px;
+  }
+}
 }
 
 /* SECTIONS */
@@ -287,15 +297,15 @@ section {
 }
 
 
-/* EDUCATION SECTION */
+/* EDUCATION */
 .education-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   min-height: 100vh; 
-  gap: 20px;
-  padding: 120px 20px 100px; /* Prevents navbar and footer overlap */
+  gap: 10px;
+  padding: 20px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -307,12 +317,10 @@ section {
   background-color: #222;
   border: 1px solid #f33c3c;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   display: flex;
-  flex-direction: column; /* Stack on small screens */
-  gap: 15px;
+  gap: 10px;
   align-items: center;
-  text-align: center;
   box-sizing: border-box;
 }
 
@@ -326,13 +334,14 @@ section {
 
 /* Text */
 .education-card .text-content {
-  width: 100%;
+  flex: 1;
+  padding-left: 15px;
 }
 
 .education-details h2 {
   color: #f00;
   font-size: 1.8rem;
-  margin: 5px 0;
+  margin: 0;
 }
 
 .education-details p {
@@ -341,23 +350,22 @@ section {
   font-size: 1rem;
 }
 
-/* Fix Footer Overlap */
-.education-container::after {
-  content: "";
-  display: block;
-  height: 80px; /* Extra space after last card */
-}
-
-/* ✅ Small Screens (iPhone SE & iPhone 16 Pro) */
 @media (max-width: 375px) { 
   .education-card {
-    padding: 10px;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    padding: 15px;
     max-width: 95%;
   }
 
   .education-image img {
     width: 70px;
     height: 70px;
+  }
+
+  .education-card .text-content {
+    padding-left: 0;
   }
 
   .education-details h2 {
@@ -369,15 +377,22 @@ section {
   }
 }
 
-/* ✅ Medium Screens (430px - Small Tablets) */
-@media (min-width: 376px) and (max-width: 600px) { 
+@media (min-width: 376px) and (max-width: 430px) { 
   .education-card {
-    max-width: 80%;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    max-width: 90%;
   }
 
   .education-image img {
     width: 80px;
     height: 80px;
+  }
+
+  .education-card .text-content {
+    padding-left: 0;
   }
 
   .education-details h2 {
@@ -389,10 +404,10 @@ section {
   }
 }
 
-/* ✅ Large Tablets & Small Laptops */
+
 @media (min-width: 601px) and (max-width: 1024px) { 
   .education-card {
-    max-width: 85%;
+    max-width: 85%; 
   }
 
   .education-image img {
@@ -412,17 +427,20 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centers content in the body */
   justify-content: center; 
   min-height: 100vh;
-  gap: 20px; 
-  padding: 80px 15px 20px; 
+  gap: 20px; /* Increased gap for better spacing */
+  padding: 100px 20px 20px; /* Top padding to create space below navbar */
+
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Project Card */
+
+/* Ensure project cards fit properly */
 .project-card {
   background-color: #222;
   border: 1px solid #f33c3c;
@@ -430,11 +448,17 @@ section {
   padding: 15px;
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 10px;
   width: 100%;
   max-width: 750px;
+  height: 150px;
   align-items: center;
   transition: all 0.3s ease-in-out;
+}
+
+/* Ensure the first project is visible */
+.project-card:first-child {
+  margin-top: 0; /* Removed extra margin since we now use padding on container */
 }
 
 /* Image */
@@ -453,7 +477,6 @@ section {
   flex: 1;
 }
 
-
 .project-title {
   font-size: 1.8rem;
   color: #f33;
@@ -466,58 +489,43 @@ section {
   line-height: 1.5;
 }
 
-
-@media (max-width: 400px) {  
+/* Responsive for Small Phones (iPhone SE, older models) */
+@media (max-width: 400px) {
   .project-card {
-    flex-direction: row; 
+    flex-direction: row; /* Keep row layout on small screens */
     align-items: center;
-    text-align: left; 
-    width: 100%;
-    max-width: 350px; 
+    text-align: left; /* Ensure text aligns properly */
+    max-width: 350px; /* Ensure proper width */
   }
-
   .project-image {
-    max-width: 100px; 
+    max-width: 100px; /* Adjust image size */
     height: auto;
   }
-
   .project-title {
     font-size: 1.2rem;
   }
-
   .project-description {
     font-size: 0.9rem;
   }
 }
 
-
+/* Responsive for Mobile (iPhone 12 Pro, standard phones) */
 @media (min-width: 401px) and (max-width: 768px) {
-  .projects-container {
-    padding: 80px 15px 20px;
-  }
-
   .project-card {
-    flex-direction: column;
+    flex-direction: row; /* Keep row layout on small screens */
     align-items: center;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-    max-width: 350px;
+    text-align: left; /* Ensure text aligns properly */
+    max-width: 350px; /* Ensure proper width */
   }
-
   .project-image {
-    width: 100%;
-    max-width: 180px;
+    max-width: 100px; /* Adjust image size */
     height: auto;
-    margin-bottom: 10px;
   }
-
   .project-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
-
   .project-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -529,7 +537,6 @@ section {
 
   .project-card {
     flex-direction: row;
-    width: 95%;
     max-width: 650px;
   }
 
@@ -545,7 +552,3 @@ section {
     font-size: 1.2rem;
   }
 }
-
-
-
-
