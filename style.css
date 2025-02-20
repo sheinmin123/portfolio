@@ -62,11 +62,48 @@ header {
     color: white;
 }
 
+.lightrun {animation: lightRun 2s infinite alternate;
+}
+
+@keyframes lightRun {
+    0% {
+        box-shadow: 0 0 20px rgb(255, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 20px rgb(1, 247, 255);
+    }
+    100% {
+        box-shadow: 0 0 20px rgb(253, 249, 1);
+    }
+
+}
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #f33c3c;
     text-decoration: none;
+    display: inline-block;
+    animation: bounce 0.6s infinite alternate, lightRun 1.5s infinite alternate;}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes lightRun {
+    0% {
+      text-shadow: 0 0 5px #ff0000, 0 0 10px #006af5, 0 0 15px #ff0000;
+    }
+    50% {
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #fae902, 0 0 30px #ff0000;
+    }
+    100% {
+      text-shadow: 0 0 5px #ff0000, 0 0 10px #1cff55, 0 0 15px #ff0000;
+    }
 }
 
 nav {
