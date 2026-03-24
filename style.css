@@ -231,7 +231,7 @@ section {
 
 .typing-text span::after{
   content: "";
-  background-color: black;
+  
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
@@ -587,5 +587,29 @@ section {
 
   .project-description {
     font-size: 1.2rem;
+  }
+}
+.back-video {
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            width: 100%; 
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;   /* key for responsiveness */
+            opacity: 0.3;
+             z-index: -1;
+        }
+@media (max-aspect-ratio: 16/9) {
+  .back-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .back-video {
+    width: 100%;
+    height: auto;
   }
 }
