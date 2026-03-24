@@ -85,6 +85,30 @@
         margin: 0 8px;
     }
 }
+    .back-video {
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            width: 100%; 
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;   /* key for responsiveness */
+            opacity: 0.3;
+             z-index: -1;
+        }
+        @media (max-aspect-ratio: 16/9) {
+            .back-video {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .back-video {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <video class="back-video" autoplay muted loop playsinline>
