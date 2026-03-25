@@ -41,11 +41,19 @@
                 height: auto;
             }
         }
+
+        @media (max-aspect-ratio: 768px) {
+            .back-video {
+                width: 100%;
+                height: auto;
+            }
+        }
 </style>
 </head>
 <body>
-  <video class="back-video" autoplay muted loop playsinline preload="auto">
+  <video class="back-video" autoplay muted loop playsinline poster="Background_Video.mp4" preload="auto">
         <source src="Background_Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
    </video>
     <header>
         <a href="https://drive.google.com/drive/folders/1rEzayE4lq4G0pxfs3tKxl9CGjysY0227?usp=sharing" class="logo" target="_blank">Shein Min Ko</a>
