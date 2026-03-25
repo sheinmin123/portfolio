@@ -21,12 +21,15 @@
             position: fixed;
             top: 70%;
             left: 50%;
-            width: 100%; 
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
             height: auto;
+            z-index: -1;
             transform: translate(-50%, -50%);
-            object-fit: cover;   /* key for responsiveness */
-            opacity: 0.3;
-             z-index: -1;
+            object-fit: cover; /* Centers and crops the video automatically */
+            opacity: 0.3;      /* Keeps the background subtle */
+            pointer-events: none; /* Allows you to click links "through" the video */
         }
         @media (max-aspect-ratio: 16/9) {
             .back-video {
@@ -41,13 +44,19 @@
                 height: auto;
             }
         }
+
+        @media (max-aspect-ratio: 768px) {
+            .back-video {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
-   <video class="back-video" autoplay muted loop playsinline preload="auto">
+   <video class="back-video" autoplay muted loop playsinline poster="main.jpeg">
         <source src="Background_Video.mp4" type="video/mp4">
    </video>
-
     <header>
         <a href="https://drive.google.com/drive/folders/1rEzayE4lq4G0pxfs3tKxl9CGjysY0227?usp=sharing" class="logo" target="_blank">Shein Min Ko</a>
          <nav>
